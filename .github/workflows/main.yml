@@ -13,4 +13,4 @@ jobs:
           curl -X POST https://api.line.me/v2/bot/message/push \
           -H "Content-Type: application/json" \
           -H "Authorization: Bearer ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}" \
-                       -d "{\"to\":\"${{ secrets.LINE_USER_ID }}\",\"messages\":[{\"type\":\"text\",\"text\":\"Kuma 今日提醒\\n\\n每天跟小Baby玩還有聊天\\n奴隸 給你+10分\\n\\n英文20分鐘\\n我好棒哦!!\"}]}"
+                       -d "{\"to\":\"${{ secrets.LINE_USER_ID }}\",\"messages\":[{\"type\":\"text\",\"text\":\"🐻 Kuma 今日提醒\\n\\n□ 每天跟小Baby玩還有聊天\\n🐻 奴隸 給你+10分！\\n\\n□ 每天吃炙燒起司鮮蝦！\\n💖 貓咪不會給你加分，但貓咪的肚子會很開心\\n\\n□ 英文20分鐘\\n📚 我好棒哦！！\\n\\n□ 跟貓咪聊天分享有趣的事\\n🐻 Kuma會考慮不揍你！\\n\\n💖 給努力的自己一個抱抱\"}]}"
