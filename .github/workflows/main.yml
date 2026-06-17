@@ -1,0 +1,24 @@
+name: Kuma Reminder
+
+on:
+  workflow_dispatch:
+
+jobs:
+  send-reminder:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send LINE message
+        run: |
+          curl -X POST https://api.line.me/v2/bot/message/push \
+          -H "Content-Type: application/json" \
+          -H "Authorization: Bearer ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}" \
+          -d '{
+            "to":"${{ secrets.LINE_USER_ID }}",
+            "messages":[
+              {
+                "type":"text",
+                "text":"🐻 Kuma 今日提醒\n\n□ 跟小baby聊天和玩遊戲\n□ 奴隸 做得很好 給你+10分 🐻💖\n□ 英文20分鐘\n□ 好棒棒!\n 每天吃炙燒起司鮮蝦\n 貓咪很開心ʕ≧ᴥ≦ʔ\n 跟貓咪談心聊天\n 給努力的自己一個抱抱ʕっ•ᴥ•ʔっ"
+              }
+            ]
+          }'
