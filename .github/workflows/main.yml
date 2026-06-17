@@ -2,7 +2,8 @@ name: Kuma Reminder
 
 on:
   workflow_dispatch:
-
+  schedule:
+    - cron: "30 15 * * *"
 jobs:
   send-reminder:
     runs-on: ubuntu-latest
